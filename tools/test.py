@@ -160,7 +160,7 @@ def main():
         init_dist(args.launcher, **cfg.dist_params)
 
     # build the dataloader
-    dataset = build_dataset(cfg.data.test)
+    dataset = build_dataset(cfg.data.test, dict(has_no_annotation=True))
     data_loader = build_dataloader(
         dataset,
         samples_per_gpu=samples_per_gpu,
